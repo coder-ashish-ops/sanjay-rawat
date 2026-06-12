@@ -36,6 +36,9 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
+    <!-- Font Awesome for LinkedIn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <style>
          :root {
             --primary: #2563eb;
@@ -48,13 +51,13 @@
             --glass: rgba(255, 255, 255, 0.75);
             --card-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
         }
-        
+
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
-        
+
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
             background-color: var(--bg-light);
@@ -63,53 +66,53 @@
             line-height: 1.6;
         }
         /* --- Custom Scrollbar --- */
-        
+
          ::-webkit-scrollbar {
             width: 8px;
         }
-        
+
          ::-webkit-scrollbar-track {
             background: #f1f1f1;
         }
-        
+
          ::-webkit-scrollbar-thumb {
             background: var(--primary-light);
             border-radius: 10px;
         }
-        
+
          ::-webkit-scrollbar-thumb:hover {
             background: var(--primary);
         }
         /* --- Utility Classes --- */
-        
+
         .glass {
             background: var(--glass);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border: 1px solid rgba(255, 255, 255, 0.3);
         }
-        
+
         .text-gradient {
             background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        
+
         .bg-gradient-medical {
             background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
         }
-        
+
         .section-padding {
             padding: 6rem 0;
         }
-        
+
         @media (min-width: 768px) {
             .section-padding {
                 padding: 10rem 0;
             }
         }
         /* --- Hero Animations --- */
-        
+
         .hero-shape {
             position: absolute;
             filter: blur(80px);
@@ -117,17 +120,17 @@
             border-radius: 50%;
         }
         /* --- Card Hover Effects --- */
-        
+
         .hover-card {
             transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
         }
-        
+
         .hover-card:hover {
             transform: translateY(-10px) scale(1.02);
             box-shadow: var(--card-shadow);
         }
         /* --- Floating Animation --- */
-        
+
         @keyframes float {
             0% {
                 transform: translateY(0px);
@@ -139,11 +142,11 @@
                 transform: translateY(0px);
             }
         }
-        
+
         .floating {
             animation: float 6s ease-in-out infinite;
         }
-        
+
         @keyframes bounce-slow {
             0%,
             100% {
@@ -153,12 +156,12 @@
                 transform: translateY(-10px);
             }
         }
-        
+
         .animate-bounce-slow {
             animation: bounce-slow 3s ease-in-out infinite;
         }
         /* --- Loader --- */
-        
+
         #loader {
             position: fixed;
             inset: 0;
@@ -170,7 +173,7 @@
             justify-content: center;
         }
         /* Responsive text fixes */
-        
+
         @media (max-width: 640px) {
             .section-padding {
                 padding: 4rem 0;
@@ -186,7 +189,7 @@
             }
         }
         /* Tablets and up */
-        
+
         @media (min-width: 768px) and (max-width: 1024px) {
             .grid-cols-2 {
                 grid-template-columns: repeat(2, 1fr);
@@ -646,7 +649,20 @@
             </div>
         </section>
 
-        <!-- Contact Section -->
+        <!-- LinkedIn Profile Section - ADDED -->
+        <section class="py-8 bg-white border-y border-slate-100">
+            <div class="max-w-7xl mx-auto px-4 md:px-8">
+                <div class="flex justify-center">
+                    <a href="https://www.linkedin.com/in/sanjay-rawat-plai-india" target="_blank" rel="noopener noreferrer" class="group flex items-center gap-4 bg-slate-50 hover:bg-gradient-medical hover:text-white px-8 py-4 rounded-full shadow-md transition-all duration-300">
+                        <i class="fab fa-linkedin text-2xl text-blue-700 group-hover:text-white"></i>
+                        <span class="font-bold text-slate-700 group-hover:text-white">Connect on LinkedIn: Sanjay Rawat (PLAI India)</span>
+                        <i data-lucide="external-link" class="w-4 h-4 group-hover:text-white"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section with Email Interface (ADDED from the code you provided) -->
         <section id="contact" class="section-padding bg-white relative overflow-hidden">
             <div class="max-w-7xl mx-auto px-4 md:px-8 relative z-10">
                 <div class="bg-slate-50 rounded-[2rem] md:rounded-[4rem] shadow-2xl overflow-hidden grid lg:grid-cols-5 scroll-reveal">
@@ -679,15 +695,25 @@
                         </div>
                     </div>
                     <div class="lg:col-span-3 p-8 md:p-16">
-                        <form id="contact-form" class="space-y-6 md:space-y-8">
-                            <div class="grid md:grid-cols-2 gap-6 md:gap-8">
-                                <div><label class="text-[10px] md:text-xs font-black uppercase text-slate-400">Full Name</label><input type="text" required class="w-full bg-white rounded-xl md:rounded-2xl px-5 md:px-6 py-4 md:py-5 border border-slate-200 focus:border-blue-500 outline-none transition"></div>
-                                <div><label class="text-[10px] md:text-xs font-black uppercase text-slate-400">Email</label><input type="email" required class="w-full bg-white rounded-xl md:rounded-2xl px-5 md:px-6 py-4 md:py-5 border border-slate-200 focus:border-blue-500 outline-none transition"></div>
+                        <!-- EMAIL INTERFACE - Integrated from the provided code -->
+                        <div style="text-align: center;">
+                            <p style="margin-bottom: 1.5rem; color: #64748b; font-weight: 500;">Fill the form below and click the button to send an email</p>
+                            <div class="mb-5">
+                                <input type="text" id="emailName" placeholder="Your full name" class="w-full bg-white rounded-xl md:rounded-2xl px-5 md:px-6 py-4 md:py-5 border border-slate-200 focus:border-blue-500 outline-none transition">
                             </div>
-                            <div><label class="text-[10px] md:text-xs font-black uppercase text-slate-400">Subject</label><select class="w-full bg-white rounded-xl md:rounded-2xl px-5 md:px-6 py-4 md:py-5 border border-slate-200"><option>Internship Opportunity</option><option>Research Collaboration</option><option>Job Offer</option><option>General Inquiry</option></select></div>
-                            <div><label class="text-[10px] md:text-xs font-black uppercase text-slate-400">Message</label><textarea rows="4" required class="w-full bg-white rounded-xl md:rounded-2xl px-5 md:px-6 py-4 md:py-5 border border-slate-200 focus:border-blue-500 outline-none transition"></textarea></div>
-                            <button type="submit" class="w-full py-5 md:py-6 bg-gradient-medical text-white rounded-2xl md:rounded-[2rem] font-black uppercase tracking-widest shadow-xl hover:shadow-2xl transition-all">Send Transmission <i data-lucide="send" class="w-4 h-4 md:w-5 md:h-5 inline ml-2"></i></button>
-                        </form>
+                            <div class="mb-5">
+                                <input type="email" id="emailAddress" placeholder="Your email address" class="w-full bg-white rounded-xl md:rounded-2xl px-5 md:px-6 py-4 md:py-5 border border-slate-200 focus:border-blue-500 outline-none transition">
+                            </div>
+                            <div class="mb-6">
+                                <textarea id="emailMessage" rows="4" placeholder="Your message / inquiry about internship, research, or collaboration..." class="w-full bg-white rounded-xl md:rounded-2xl px-5 md:px-6 py-4 md:py-5 border border-slate-200 focus:border-blue-500 outline-none transition"></textarea>
+                            </div>
+                            <button id="openEmailBtn" class="w-full py-5 md:py-6 bg-gradient-medical text-white rounded-2xl md:rounded-[2rem] font-black uppercase tracking-widest shadow-xl hover:shadow-2xl transition-all flex items-center justify-center gap-3">
+                                <i class="fas fa-envelope"></i> Send Message via Email →
+                            </button>
+                            <p style="margin-top: 1rem; font-size: 0.8rem; color: #10b981;">
+                                <i class="fas fa-info-circle"></i> Clicking will open your email app.
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -728,8 +754,60 @@
             initGSAP();
             initCounters();
             initDeveloperModal();
-            initForms();
+            initEmailInterface(); // Added email interface function
         });
+
+        // Email Interface - Works exactly like the code you provided
+        function initEmailInterface() {
+            const openEmailBtn = document.getElementById('openEmailBtn');
+            if (openEmailBtn) {
+                openEmailBtn.addEventListener('click', function() {
+                    const name = document.getElementById('emailName').value.trim();
+                    const email = document.getElementById('emailAddress').value.trim();
+                    const message = document.getElementById('emailMessage').value.trim();
+
+                    if (!name) {
+                        alert("⚠️ Please enter your name");
+                        document.getElementById('emailName').focus();
+                        return;
+                    }
+                    if (!email) {
+                        alert("⚠️ Please enter your email address");
+                        document.getElementById('emailAddress').focus();
+                        return;
+                    }
+                    if (!email.includes('@') || !email.includes('.')) {
+                        alert("⚠️ Please enter a valid email address (e.g., name@example.com)");
+                        document.getElementById('emailAddress').focus();
+                        return;
+                    }
+                    if (!message) {
+                        alert("⚠️ Please enter your message");
+                        document.getElementById('emailMessage').focus();
+                        return;
+                    }
+
+                    const subject = encodeURIComponent(`Portfolio Contact from ${name} (Pharmaceutical Inquiry)`);
+                    const body = encodeURIComponent(
+                        `Name: ${name}\n` +
+                        `Email: ${email}\n\n` +
+                        `Message:\n${message}\n\n` +
+                        `---\nSent from Sanjay Rawat's Pharmaceutical Portfolio\n`
+                    );
+
+                    window.location.href = `mailto:sanjayrawat1741@gmail.com?subject=${subject}&body=${body}`;
+                    alert("✅ Your email client will open now. Click Send to complete the message.");
+                    
+                    // Confetti effect
+                    canvasConfetti({
+                        particleCount: 150,
+                        spread: 70,
+                        origin: { y: 0.6 },
+                        colors: ['#2563eb', '#06b6d4', '#ffffff']
+                    });
+                });
+            }
+        }
 
         function initLoader() {
             window.addEventListener('load', () => {
@@ -914,22 +992,6 @@
             });
         }
 
-        function initForms() {
-            const form = document.getElementById('contact-form');
-            form.addEventListener('submit', (e) => {
-                e.preventDefault();
-                confetti({
-                    particleCount: 150,
-                    spread: 70,
-                    origin: {
-                        y: 0.6
-                    },
-                    colors: ['#2563eb', '#06b6d4', '#ffffff']
-                });
-                alert('Transmission Sent Successfully! Sanjay will contact you shortly.');
-                form.reset();
-            });
-        }
         const menuBtn = document.getElementById('mobile-menu-toggle');
         const mobileMenu = document.getElementById('mobile-menu');
         let menuOpen = false;
